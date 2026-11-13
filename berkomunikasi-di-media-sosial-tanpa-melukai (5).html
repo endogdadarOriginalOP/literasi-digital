@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Berkomunikasi di Media Sosial Tanpa Melukai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1c2230;--muted:#5a6372;--line:#dde1e8;--soft:#f1f3f7;--hl:#ffe14d;--red:#d92d20;--blue:#2352c8;
+--serif:Literata,Georgia,"Times New Roman",serif;--ui:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:#fff;color:var(--ink);font:1.0625rem/1.7 var(--serif)}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:3px}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+header{position:sticky;top:0;z-index:5;background:#fffffff2;border-bottom:1px solid var(--line);font-family:var(--ui);font-size:.9rem}
+header .wrap{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;align-items:baseline;padding-top:.8rem;padding-bottom:.8rem}
+header b{font-weight:600;margin-right:auto}
+header a{color:var(--muted);text-decoration:none}
+header a:hover{color:var(--ink);text-decoration:underline}
+h1,h2,h3{font-weight:700;line-height:1.15;margin:0}
+h1{font-size:clamp(2.3rem,7vw,3.7rem);letter-spacing:-.02em;margin:4rem 0 1.25rem}
+h2{font-size:clamp(1.55rem,4vw,2rem);letter-spacing:-.01em;margin-bottom:1rem}
+.lead{font-size:1.2rem;color:var(--muted);max-width:34rem;margin:0 0 2.5rem}
+p{margin:0 0 1rem}
+.small{font-family:var(--ui);font-size:.9rem;color:var(--muted)}
+section{margin-top:4.5rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+/* contoh draf di bagian atas */
+.draft{font-family:var(--ui);border:1px solid var(--line);border-radius:14px;max-width:30rem;overflow:hidden;background:#fff}
+.draft-top{padding:.55rem 1rem;background:var(--soft);font-size:.8rem;color:var(--muted)}
+.draft-body{padding:1.1rem 1rem 1.3rem;margin:0;font-size:1.15rem;line-height:1.6}
+.old{color:var(--muted);background:linear-gradient(var(--red),var(--red)) 0 55%/100% 2px no-repeat}
+.new{display:inline-block;background:var(--hl);padding:0 .2em}
+.draft-foot{display:flex;justify-content:flex-start;align-items:center;gap:1rem;padding:.6rem 1rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+.draft-foot span:last-child{background:var(--ink);color:#fff;padding:.3rem .9rem;border-radius:99px;font-weight:500}
+@media(prefers-reduced-motion:no-preference){
+.old{animation:strike .5s .6s both}
+.new{animation:reveal 1.3s 1.3s steps(26,end) both}
+}
+@keyframes strike{from{background-size:0 2px}}
+@keyframes reveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+/* daftar istilah */
+dl{margin:0}
+.terms>div{display:grid;grid-template-columns:8.5rem 1fr;gap:1rem;padding:.9rem 0;border-top:1px solid var(--line)}
+.terms>div:last-child{border-bottom:1px solid var(--line)}
+dt{font-weight:700}
+dd{margin:0}
+ol.steps{list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:2rem 1fr;gap:.75rem;padding:.85rem 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps i{font:700 1.5rem/1.2 var(--serif);color:var(--blue);font-style:normal}
+.steps b{display:block}
+q{quotes:"“" "”"}
+/* latihan */
+details{border-top:1px solid var(--line);padding:.9rem 0}
+details:last-of-type{border-bottom:1px solid var(--line);margin-bottom:1rem}
+summary{cursor:pointer;font-weight:600;font-family:var(--ui)}
+details ul{margin:.8rem 0;padding-left:1.2rem}
+details p{margin:.6rem 0 0}
+.note{border-left:3px solid var(--hl);padding:.2rem 0 .2rem 1rem;margin:1.5rem 0 0}
+/* checklist */
+.check{display:flex;gap:.8rem;align-items:flex-start;padding:.75rem 0;border-top:1px solid var(--line);cursor:pointer}
+.check:last-of-type{border-bottom:1px solid var(--line)}
+.check input{margin-top:.5rem;width:1.1rem;height:1.1rem;accent-color:var(--blue)}
+.check.done span{color:var(--muted);text-decoration:line-through}
+.bar{height:4px;background:var(--soft);margin:1.2rem 0 .5rem}
+.bar i{display:block;height:100%;width:0;background:var(--blue);transition:width .2s}
+/* refleksi */
+table{width:100%;border-collapse:collapse;font-family:var(--ui);font-size:.95rem}
+th,td{text-align:left;padding:.7rem .5rem .7rem 0;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font-weight:600;color:var(--muted)}
+td:last-child,th:last-child{width:5.5rem}
+td input{width:4rem;font:inherit;padding:.4rem;border:1px solid var(--muted);border-radius:6px}
+.btn{font:500 .95rem var(--ui);background:var(--ink);color:#fff;border:0;border-radius:99px;padding:.6rem 1.2rem;cursor:pointer}
+.btn:hover{background:var(--blue)}
+.row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:1.2rem}
+#scoreResult{font-family:var(--ui);font-weight:600}
+/* sumber */
+.src{padding:.9rem 0;border-top:1px solid var(--line)}
+.src:last-child{border-bottom:1px solid var(--line)}
+.src a{font-weight:600}
+.src p{margin:.15rem 0 0}
+footer{margin:4rem 0 3rem;font-family:var(--ui);font-size:.85rem;color:var(--muted)}
+@media(max-width:560px){.terms>div{grid-template-columns:1fr;gap:.1rem}h1{margin-top:2.5rem}}
+
+/* gaya artikel */
+.wrap{max-width:40rem}
+body{font-size:1.125rem;line-height:1.8}
+section{border-top:0;padding-top:0;margin-top:3.4rem}
+.sheet{border-top:1px solid var(--line);padding-top:2.2rem}
+h3{font-size:1.2rem;margin:2rem 0 .6rem}
+.sheet h3{font-family:var(--ui);font-size:1.05rem}
+.lead{font-size:1.3rem;line-height:1.55;color:var(--ink)}
+figure{margin:0 0 .5rem}
+figcaption{font:.85rem var(--ui);color:var(--muted);margin-top:.7rem}
+blockquote{margin:1.2rem 0;padding:.1rem 0 .1rem 1.1rem;border-left:4px solid var(--hl);font-style:italic}
+blockquote p{margin:0}
+.refs{padding-left:1.2rem;margin:0}
+.refs li{margin-bottom:.9rem}
+.refs a{font-weight:600}
+.refs span{display:block;font:.88rem/1.5 var(--ui);color:var(--muted)}
+
+/* daya tarik */
+#read{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blue);z-index:9}
+.draft{max-width:none;box-shadow:0 1px 0 var(--line)}
+.draft-body{font-size:clamp(1.2rem,3.6vw,1.5rem)}
+.reply-to{margin:0;padding:.9rem 1rem;border-bottom:1px solid var(--line);font:.95rem/1.45 var(--ui);color:var(--muted)}
+.draft-foot button{font:500 .85rem var(--ui);background:none;border:1px solid var(--muted);color:var(--ink);border-radius:99px;padding:.3rem .9rem;cursor:pointer}
+.draft-foot button:hover{background:var(--soft)}
+.pull{font:600 clamp(1.6rem,4.8vw,2.3rem)/1.25 var(--serif);letter-spacing:-.01em;margin:3.6rem 0 0}
+.chat{display:flex;flex-direction:column;gap:.45rem;margin:1.2rem 0 1.6rem;font:.98rem/1.45 var(--ui)}
+.b{max-width:82%;padding:.6rem .95rem;border-radius:18px;margin:0}
+.b.in{background:var(--soft);border-bottom-left-radius:5px;align-self:flex-start}
+.b.out{background:var(--hl);border-bottom-right-radius:5px;align-self:flex-end}
+</style>
+</head>
+<body>
+<div id="read" aria-hidden="true"></div>
+<header><div class="wrap"><b>Panduan etika digital</b><a href="#sheet">Coba sendiri</a><a href="#sumber">Referensi</a></div></header>
+
+<main class="wrap">
+<article>
+<h1>Berkomunikasi di Media Sosial Tanpa Melukai</h1>
+<p class="lead">Satu komentar yang ditulis dalam dua menit bisa dibaca banyak orang dan sulit ditarik kembali. Tulisan ini membahas cara berpendapat dan membalas orang tanpa membuat mereka sakit hati.</p>
+
+<figure>
+<div class="draft" role="img" aria-label="Draf balasan: kalimat “Kamu selalu salah.” dicoret dan diganti “Aku melihatnya beda karena…”">
+<div class="draft-top" aria-hidden="true">Balas komentar</div>
+<p class="reply-to" aria-hidden="true">“Argumenmu lemah banget, nggak masuk akal.”</p>
+<p class="draft-body" aria-hidden="true"><span class="old">Kamu selalu salah.</span> <span class="new">Aku melihatnya beda karena…</span></p>
+<div class="draft-foot" aria-hidden="true"><span>Baca ulang dulu sebelum kirim</span></div>
+</div>
+<figcaption>Menulis ulang satu kalimat sebelum menekan kirim. <button type="button" id="replay" style="font:inherit;background:none;border:0;padding:0;color:var(--blue);text-decoration:underline;cursor:pointer">Putar ulang</button></figcaption>
+</figure>
+
+<section>
+<h2>Kata-kata kita jalan lebih jauh dari yang kita kira</h2>
+<p>Bayangkan kamu menulis balasan pendek di kolom komentar, agak ketus karena sedang kesal. Beberapa jam kemudian komentar itu sudah di-screenshot, dikirim ke grup lain, dan dibaca orang yang tidak tahu apa yang memicunya. Konteks awalnya tertinggal di tengah jalan. Yang sampai hanya kalimatnya.</p>
+<p>Karena itu, ada dua hal yang layak dipikirkan sebelum mengirim. Pertama, dampaknya: apakah pesan ini membantu, memperjelas, atau malah mempermalukan seseorang? Kedua, konteksnya: siapa yang akan membaca, apa yang belum kita ketahui, dan apakah nadanya gampang disalahpahami?</p>
+<p>Dari sini kelihatan bahwa etika bukan cuma soal sopan santun. Ia berkaitan dengan kepercayaan, privasi, dan keselamatan bersama, apalagi pesan kita bisa sampai ke orang yang tidak pernah kita bayangkan.</p>
+</section>
+
+<p class="pull">Konteks awalnya tertinggal di tengah jalan. Yang sampai hanya kalimatnya.</p>
+
+<section id="cabe">
+<h2>Empat kebiasaan dalam kerangka CABE</h2>
+<p>SIBERKREASI dan mitra literasi digital merangkum empat pilar yang disingkat CABE. Yang pertama adalah <b>cakap</b>, yaitu paham fitur, konteks, dan asal informasi yang kita pakai. Yang kedua <b>aman</b>: menjaga data pribadi dan tidak membagikan informasi sensitif. Yang ketiga <b>budaya</b>, artinya menghargai perbedaan latar belakang, bahasa, dan pengalaman orang lain. Yang keempat <b>etika</b>: jujur, bertanggung jawab, dan tidak merugikan orang lain.</p>
+<p>Keempatnya bisa dipakai sebagai cara berhenti sebentar sebelum menekan kirim, lalu mengecek ke mana arah pesan kita.</p>
+</section>
+
+<section id="tanggap">
+<h2>Menahan diri saat berdiskusi: rumus TANGGAP</h2>
+<p>Kalau CABE bicara soal kebiasaan umum, TANGGAP lebih cocok dipakai ketika diskusi mulai panas. Ada tujuh langkah, dan huruf awalnya membentuk kata TANGGAP. Urutannya memang dibuat untuk memperlambat reaksi.</p>
+<p>Mulai dengan <b>menahan</b> reaksi: jangan langsung membalas saat emosi sedang tinggi. Setelah lebih tenang, <b>amati</b> faktanya dan bedakan mana informasi, opini, asumsi, dan serangan pribadi. Lalu <b>nyatakan</b> maksudmu dengan kalimat yang menjelaskan, bukan menghakimi, dan <b>gunakan</b> bukti berupa sumber yang bisa dicek orang lain.</p>
+<p>Di tahap ini nada sering jadi penentu, jadi <b>ganti</b> “kamu selalu salah” dengan “aku melihatnya beda karena…”. Maksudnya tetap sama, tapi lawan bicara lebih mungkin mau mendengarkan. Kalau obrolan sudah berubah jadi hinaan atau ancaman, <b>akhiri</b> dengan aman. Terakhir, <b>pilih</b> tindakan yang sesuai: mute, blokir, laporkan, atau ajak pindah ke obrolan pribadi kalau memang perlu.</p>
+</section>
+
+<section id="latihan">
+<h2>Tiga situasi yang sering terjadi</h2>
+<h3>Menerima informasi yang meragukan</h3>
+<p>Temanmu membagikan tangkapan layar berita yang sumbernya tidak jelas. Godaan pertama biasanya langsung membagikannya lagi. Lebih baik cari sumber aslinya, bandingkan dengan lembaga resmi, dan sebarkan hanya kalau sudah jelas. Kamu bisa membalas begini:</p>
+<div class="chat" role="group" aria-label="Contoh percakapan"><p class="b in">[tangkapan layar berita] Sebarin ya, penting nih!</p><p class="b out">Aku nemu sumber yang beda. Mau kita cek bareng dulu sebelum disebar?</p></div>
+<h3>Menghadapi komentar kasar</h3>
+<p>Ada yang menghina pendapatmu di kolom komentar. Membalas hinaan dengan hinaan hampir pasti memperburuk keadaan. Tahan dulu, pisahkan idemu dari serangan pribadi, dan berhenti kalau obrolannya sudah jadi hinaan. Kalau tetap ingin membalas, kamu bisa menulis:</p>
+<div class="chat" role="group" aria-label="Contoh percakapan"><p class="b in">Pendapat kayak gini cuma orang bodoh yang percaya.</p><p class="b out">Aku tidak setuju sama pendapat ini, tapi tolong jaga bahasanya.</p></div>
+<p>Diam, lalu mute, blokir, atau laporkan juga pilihan yang sah.</p>
+<h3>Mau mengunggah foto orang lain</h3>
+<p>Kamu menemukan foto temanmu dari acara sekolah dan ingin mengunggahnya. Minta izin dulu kepada orang di foto, cek apakah ada data pribadi di dalamnya, dan jangan unggah kalau dia tidak nyaman. Memotong bagian wajah tanpa bilang-bilang tidak menggantikan izin.</p>
+<div class="chat" role="group" aria-label="Contoh percakapan"><p class="b in">Foto acara sekolah kemarin bagus banget, ada kamu juga.</p><p class="b out">Boleh aku unggah foto ini? Kalau kamu kurang nyaman, langsung kuhapus.</p></div>
+<p class="small">Contoh-contoh ini untuk membiasakan diri berpikir sebelum kirim, bukan untuk menilai kamu benar atau salah.</p>
+</section>
+
+<section id="bedakan">
+<h2>Kritik, serangan pribadi, dan perundungan itu beda</h2>
+<p>Tidak semua komentar pedas termasuk perundungan, dan membedakannya membantu kita memilih respons. <b>Kritik</b> membahas tindakan atau gagasan dengan alasan yang jelas dan memberi ruang untuk memperbaiki. <b>Serangan pribadi</b> menggeser pembahasan dari isunya ke identitas atau karakter seseorang. <b>Perundungan</b> merendahkan atau mengintimidasi, dan terjadi berulang, terarah, atau dilakukan banyak orang.</p>
+<p>Kalau kamu menemukan konten berbahaya, simpan buktinya secukupnya, pakai fitur pelaporan, dan cari bantuan dari orang yang kamu percaya. UNICEF Indonesia juga menyediakan materi tentang keamanan diri dan etika berinternet yang bisa jadi pegangan.</p>
+</section>
+
+<section id="penutup">
+<h2>Mulai dari hal kecil</h2>
+<p>Etika berkomunikasi tidak berarti harus selalu setuju. Kita tetap boleh berbeda pendapat, selama martabat, privasi, dan rasa aman orang lain tidak ikut hilang. Untuk hari ini, cukup mulai dari tiga kebiasaan: baca ulang sebelum kirim, cek dulu sebelum membagikan, dan pilih kata yang menjelaskan, bukan yang mempermalukan.</p>
+<p>Kalau mau mencobanya langsung, lembar latihan di bawah bisa dipakai.</p>
+</section>
+
+<section class="sheet" id="sheet">
+<h2>Coba sendiri</h2>
+<h3>Checklist 30 detik sebelum mengirim</h3>
+<p class="small">Pakai kalau pesanmu terasa mendesak, penuh emosi, atau bisa menyebar luas.</p>
+<label class="check"><input type="checkbox"><span>Apakah informasinya benar, atau sudah kuperiksa?</span></label>
+<label class="check"><input type="checkbox"><span>Apakah aku sudah izin untuk membagikan nama, foto, atau cerita orang lain?</span></label>
+<label class="check"><input type="checkbox"><span>Apakah kalimat ini menyerang orangnya, bukan membahas idenya?</span></label>
+<label class="check"><input type="checkbox"><span>Apakah konteks dan nada pesanku sudah cukup jelas?</span></label>
+<label class="check"><input type="checkbox"><span>Apakah aku siap bertanggung jawab kalau pesan ini dibaca di luar konteks?</span></label>
+<div class="bar" aria-hidden="true"><i id="checkProgress"></i></div>
+<p id="checkText" class="small" aria-live="polite">0 dari 5 pertanyaan sudah dicentang.</p>
+<p class="small">Tantangan: coba centang kelimanya di tiga unggahan berikutnya.</p>
+
+<h3 style="margin-top:2.5rem">Bagaimana kebiasaanmu sekarang?</h3>
+<p class="small">Beri nilai 1 sampai 5 untuk tiap pernyataan. 1 berarti hampir tidak pernah, 5 berarti hampir selalu.</p>
+<table>
+<thead><tr><th>Pernyataan</th><th>Nilai</th></tr></thead>
+<tbody>
+<tr><td>Aku memeriksa sumber sebelum membagikan informasi.</td><td><input class="score" type="number" min="1" max="5" inputmode="numeric" aria-label="Nilai pernyataan 1"></td></tr>
+<tr><td>Aku minta izin sebelum mengunggah foto atau cerita orang lain.</td><td><input class="score" type="number" min="1" max="5" inputmode="numeric" aria-label="Nilai pernyataan 2"></td></tr>
+<tr><td>Aku bisa berhenti saat diskusi mulai jadi serangan.</td><td><input class="score" type="number" min="1" max="5" inputmode="numeric" aria-label="Nilai pernyataan 3"></td></tr>
+<tr><td>Aku memakai fitur mute, blokir, atau lapor saat dibutuhkan.</td><td><input class="score" type="number" min="1" max="5" inputmode="numeric" aria-label="Nilai pernyataan 4"></td></tr>
+</tbody>
+</table>
+<div class="row"><button class="btn" id="scoreBtn" type="button">Lihat hasil</button><span id="scoreResult" aria-live="polite"></span></div>
+</section>
+
+<section id="sumber">
+<h2>Referensi</h2>
+<ul class="refs">
+<li><a href="https://www.unicef.org/indonesia/id/lawan-hoaks/infografis" target="_blank" rel="noopener">Cara Aman dan Nyaman Berinteraksi di Internet</a><span>UNICEF Indonesia. Panduan praktis berinteraksi di internet dengan aman dan nyaman.</span></li>
+<li><a href="https://gnld.siberkreasi.id/modul/" target="_blank" rel="noopener">4 Pilar Literasi Digital CABE</a><span>SIBERKREASI. Cakap, Aman, Budaya, dan Etika sebagai kerangka literasi digital.</span></li>
+<li><a href="https://www.unesco.org/en/social-media4peace/indonesia" target="_blank" rel="noopener">Social Media 4 Peace Indonesia</a><span>UNESCO. Inisiatif untuk menghadapi disinformasi dan ujaran kebencian.</span></li>
+<li><a href="https://jkd.komdigi.go.id/index.php/iptekkom/article/view/3378" target="_blank" rel="noopener">Model literasi digital untuk melawan ujaran kebencian</a><span>Jurnal IPTEKKOM, Komdigi. Kajian tentang literasi digital sebagai cara melawan ujaran kebencian.</span></li>
+<li><a href="https://www.komdigi.go.id/berita/berita-kominfo/detail/ajak-jaga-etika-di-ruang-digital-kominfo-hindarkan-penyebaran-sara" target="_blank" rel="noopener">Ajak jaga etika di ruang digital</a><span>Kementerian Komunikasi dan Digital. Ajakan menjaga etika dan menghindari penyebaran isu SARA.</span></li>
+<li><a href="https://data.komdigi.go.id/publikasi/document/indeks-literasi-digital-2020" target="_blank" rel="noopener">Status Literasi Digital Indonesia 2020</a><span>Data Komdigi. Publikasi tentang status literasi digital Indonesia tahun 2020.</span></li>
+<li><a href="https://infradigital.komdigi.go.id/berita-gunakan-etika-di-dunia-digital-27-5287" target="_blank" rel="noopener">Gunakan etika di dunia digital</a><span>Direktorat Jenderal Infrastruktur Digital. Pesan agar tetap beretika saat berinteraksi di dunia digital.</span></li>
+</ul>
+</section>
+</article>
+<footer>Berkomunikasi di Media Sosial Tanpa Melukai</footer>
+</main>
+
+<script>
+const checks=[...document.querySelectorAll('.check')];
+checks.forEach(c=>c.querySelector('input').addEventListener('change',()=>{
+  const done=checks.filter(x=>x.querySelector('input').checked).length;
+  checks.forEach(x=>x.classList.toggle('done',x.querySelector('input').checked));
+  document.getElementById('checkProgress').style.width=(done/checks.length*100)+'%';
+  document.getElementById('checkText').textContent=done+' dari '+checks.length+' pertanyaan sudah dicentang.';
+}));
+document.getElementById('scoreBtn').addEventListener('click',()=>{
+  const v=[...document.querySelectorAll('.score')].map(x=>Number(x.value)).filter(x=>x>=1&&x<=5);
+  const out=document.getElementById('scoreResult');
+  if(v.length<4){out.textContent='Isi keempat nilainya dulu ya.';return}
+  const t=v.reduce((a,b)=>a+b,0);
+  out.textContent=t>=16?'Skor '+t+' dari 20: kebiasaanmu sudah cukup kuat.':t>=10?'Skor '+t+' dari 20: masih ada yang bisa dilatih.':'Skor '+t+' dari 20: coba mulai dari satu kebiasaan kecil minggu ini.';
+});
+
+const bar=document.getElementById('read');
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+'%'},{passive:true});
+document.getElementById('replay').addEventListener('click',()=>{
+  document.querySelectorAll('.old,.new').forEach(e=>{e.style.animation='none';e.offsetWidth;e.style.animation=''});
+});
+</script>
+</body>
+</html>
